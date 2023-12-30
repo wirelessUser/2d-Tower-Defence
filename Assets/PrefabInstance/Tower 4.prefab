@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 806946720737616758}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.17, y: 1.3899999, z: 0}
+  m_LocalPosition: {x: -0.117, y: 0.586, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -126,9 +126,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 614081525
+  m_SortingLayer: 5
+  m_SortingOrder: 99
   m_Sprite: {fileID: 21300000, guid: 84f181009772818429125a3451f08431, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -162,6 +162,7 @@ MonoBehaviour:
   towerAnim: {fileID: 0}
   upgradeFxPrefab: {fileID: 100000, guid: 59a64bd1b0b372b48b4b1745fc37d9f0, type: 3}
   towerUpgradeCostText: {fileID: 2917737974337173730}
+  bulletSpeed: 250
 --- !u!61 &430869508
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -175,7 +176,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.7155075, y: -0.73577714}
+  m_Offset: {x: 0.10311866, y: 0.7250862}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -186,7 +187,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.1744633, y: 5.454754}
+  m_Size: {x: 8.811716, y: 8.376482}
   m_EdgeRadius: 0
 --- !u!114 &430869509
 MonoBehaviour:
@@ -232,6 +233,10 @@ PrefabInstance:
     - target: {fileID: 2917737974141428544, guid: 4a31f4b2f0ab2ba43acc487b7e77038d, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917737974141428547, guid: 4a31f4b2f0ab2ba43acc487b7e77038d, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 614081525
       objectReference: {fileID: 0}
     - target: {fileID: 2917737974141428558, guid: 4a31f4b2f0ab2ba43acc487b7e77038d, type: 3}
       propertyPath: m_Pivot.x

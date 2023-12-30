@@ -8,6 +8,7 @@ TagManager:
   - BuildArea
   - OccupiedPlace
   - Enemy
+  - offScreen
   layers:
   - Default
   - TransparentFX
@@ -44,4 +45,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Grass
+    uniqueID: 3630446043
+    locked: 0
+  - name: Road
+    uniqueID: 514184171
+    locked: 0
+  - name: Houses
+    uniqueID: 2799146881
+    locked: 0
+  - name: Extras
+    uniqueID: 3302014343
+    locked: 0
+  - name: Trees
+    uniqueID: 614081525
     locked: 0

@@ -76,9 +76,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 614081525
+  m_SortingLayer: 5
+  m_SortingOrder: 99
   m_Sprite: {fileID: 21300000, guid: e98327a79b0a1b74790cd66bd354afca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -112,6 +112,7 @@ MonoBehaviour:
   towerAnim: {fileID: 0}
   upgradeFxPrefab: {fileID: 100000, guid: 59a64bd1b0b372b48b4b1745fc37d9f0, type: 3}
   towerUpgradeCostText: {fileID: 2917737976132844910}
+  bulletSpeed: 250
 --- !u!61 &379098935
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -125,7 +126,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.053896904, y: 1.0879414}
+  m_Offset: {x: 0.9001365, y: 1.2668228}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -136,7 +137,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.281872, y: 5.3737}
+  m_Size: {x: 10.799869, y: 8.474309}
   m_EdgeRadius: 0
 --- !u!114 &379098936
 MonoBehaviour:
@@ -229,6 +230,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6331090263863484519}
     m_Modifications:
+    - target: {fileID: 2917737974141428547, guid: 4a31f4b2f0ab2ba43acc487b7e77038d, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 614081525
+      objectReference: {fileID: 0}
     - target: {fileID: 2917737974141428558, guid: 4a31f4b2f0ab2ba43acc487b7e77038d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -295,7 +300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2917737974141428558, guid: 4a31f4b2f0ab2ba43acc487b7e77038d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.864
+      value: 1.19
       objectReference: {fileID: 0}
     - target: {fileID: 2917737974141428558, guid: 4a31f4b2f0ab2ba43acc487b7e77038d, type: 3}
       propertyPath: m_AnchoredPosition.y

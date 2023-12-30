@@ -8,26 +8,19 @@ public class enemyMover : MonoBehaviour
 
     public float timeToTravel;
     public int waypointCount;
-
-    void Start()
-    {
-        
-    }
+    public float speedMultiplier ;
 
     // Update is called once per frame
     void Update()
     {
-        timeToTravel += Time.deltaTime;
-        //if (transform.position.y<wayPoints[waypointCount].transform.position.y && transform.position.x < wayPoints[waypointCount].transform.position.x)
-        //{
-        //    transform.position = Vector3.MoveTowards(transform.position, wayPoints[waypointCount].transform.position, timeToTravel);
-        //}
+      //  timeToTravel += Time.deltaTime;
+     
         if (waypointCount<wayPoints.Length)
         {
-            transform.position = Vector3.MoveTowards(transform.position, wayPoints[waypointCount].transform.position, timeToTravel*0.005f);
+            transform.position = Vector3.MoveTowards(transform.position, wayPoints[waypointCount].transform.position, timeToTravel* speedMultiplier);
         }
 
-        if (waypointCount==17)
+        if (waypointCount== wayPoints.Length-1)
         {
             waypointCount = 0;
         }
@@ -37,7 +30,7 @@ public class enemyMover : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       // Debug.Log("trigerring");
+      
         if (collision.gameObject.tag == "WayPoint")
         {
             waypointCount++;
