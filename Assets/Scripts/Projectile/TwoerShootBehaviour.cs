@@ -23,41 +23,66 @@ public class TwoerShootBehaviour : MonoBehaviour
     public GameObject upgradeFxPrefab;
 
     public TextMeshProUGUI towerUpgradeCostText;
+    public float bulletSpeed;
     private void Awake()
     {
         towerAnim = GetComponent<Animator>();
         towerUpgradeCostText.text = towerUpgradeCost.ToString();
     }
-  
 
-    // Update is called once per frame
-    void Update()
-    {
 
-        
 
-    }
 
     public void Shoot()
     {
         if (Time.time > timeBetweenEachShot)
         {
+            // Find the nearest enemy
+            GameObject nearestEnemy = FindNearestEnemy();
 
-            foreach (GameObject shotpoints in shotPoint)
+            if (nearestEnemy != null)
             {
-                Debug.Log("calling time");
-                ProjectilesScript bulletInst = Instantiate(bullet, transform.localPosition, shotpoints.transform.localRotation);
-               // bulletInst.GetComponent<Rigidbody2D>().AddForce(shotpoints.transform.rotation, ForceMode2D.Impulse);
+                foreach (GameObject shotPoint in shotPoint)
+                {
+                    // Calculate direction vector towards the nearest enemy
+                    Vector3 direction = nearestEnemy.transform.position - shotPoint.transform.position;
+                    direction.Normalize();
+
+                    // Instantiate the bullet at the shot point and apply force in the calculated direction
+                    ProjectilesScript bulletInst = Instantiate(bullet, shotPoint.transform.position, Quaternion.identity);
+                    bulletInst.GetComponent<Rigidbody2D>().AddForce(direction * bulletSpeed);
+                }
             }
 
-           
             timeBetweenEachShot = Time.time + desiredTime;
+        }
+    }
 
+    GameObject FindNearestEnemy()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");  // Adjust the tag as needed
+
+        if (enemies.Length == 0)
+        {
+            return null;  // No enemies found
         }
 
+        GameObject nearestEnemy = enemies[0];
+        float nearestDistance = Vector3.Distance(transform.position, nearestEnemy.transform.position);
 
-    }// End Shoot..............
+        foreach (GameObject enemy in enemies)
+        {
+            float distance = Vector3.Distance(transform.position, enemy.transform.position);
 
+            if (distance < nearestDistance)
+            {
+                nearestEnemy = enemy;
+                nearestDistance = distance;
+            }
+        }
+
+        return nearestEnemy;
+    }
 
 
 

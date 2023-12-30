@@ -16,10 +16,12 @@ public class EnemyLifeBehavior : MonoBehaviour
         enemyAnim = GetComponent<Animator>();
         currentHealth = maxHealth;
     }
+
+   
     public void TakeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;
-        Debug.Log("currentHealth ==" + currentHealth);
+       
         enemyAnim.SetTrigger("Damage");
         if (currentHealth<=0)
         {
@@ -27,12 +29,19 @@ public class EnemyLifeBehavior : MonoBehaviour
             toweCreatRef.AddCoin(AddcointAfterDie);
             enemyAnim.SetTrigger("Dead");
             isDead = true;
-            Destroy(gameObject);
-           
+          StartCoroutine( EnemyDestroy(1f));
+
+
         }
     }
 
-
+    
+    IEnumerator EnemyDestroy(float time)
+    {
+        yield return new WaitForSeconds(time);
+            Destroy(gameObject);
+        
+    }
 
 
 

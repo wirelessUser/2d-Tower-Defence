@@ -48,6 +48,7 @@ public class MainGameControlller : MonoBehaviour
                     GameObject enemyInstantiate = Instantiate(enemyPrefbas[i]);
                     enemyInstantiate.transform.position = spawnPos.position;
                     enemyOnGame++;
+                    yield return new WaitForSeconds(spawnAfterTime);
                 }
                
             }

@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 5662322075897084197}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.2994146, y: -1.6298314, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,9 +74,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 614081525
+  m_SortingLayer: 5
+  m_SortingOrder: 178
   m_Sprite: {fileID: 21300000, guid: 23cfb3c9038073340880d754831a9965, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -122,9 +122,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.14088494}
+  m_Offset: {x: 0.019513756, y: -0.14088494}
   serializedVersion: 2
-  m_Radius: 0.23878652
+  m_Radius: 0.21927276
 --- !u!114 &7171704775039079201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c035b88583a2cd449e8e6ae0330a3fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damageToEnemy: 20
   bulletBody: {fileID: 0}
   bulletVelocity: 5
 --- !u!50 &2520847687600225888
